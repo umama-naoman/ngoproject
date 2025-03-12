@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Upload Homepage Image</title>
+    <link rel="stylesheet" th:href="@{/css/admin.css}" />
+</head>
+<body>
+    <div class="upload-container">
+        <h1>Upload Homepage Image</h1>
+        <form action="/admin/upload" method="post" enctype="multipart/form-data">
+            <input type="file" name="file" required />
+            <button type="submit">Upload</button>
+        </form>
+    </div>
+</body>
+</html>

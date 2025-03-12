@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Uploaded Images</title>
+    <link rel="stylesheet" th:href="@{/css/admin.css}" />
+</head>
+<body>
+    <div class="image-gallery">
+        <h1>Uploaded Images</h1>
+        <div class="images">
+            <div th:each="image : ${images}">
+                <img th:src="@{/manual_uploads/{filename}(filename=${image})}" alt="Uploaded Image">
+                <form action="/admin/delete" method="post">
+                    <input type="hidden" name="filename" th:value="${image}">
+                    <button type="submit">Delete</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

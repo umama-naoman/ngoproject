@@ -1,0 +1,111 @@
+/* Navbar Styling */
+.navbar {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+	flex-wrap: wrap;
+    background: linear-gradient(135deg, #1F1C2C, rgb(0, 128, 192));
+	padding: 20px 20px;  
+	min-height: 100px;    
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+/* Navbar Flex Container */
+.nav-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    
+}
+
+/* Logo */
+.logo a {
+    font-size: 2rem;
+    font-weight: bold;
+    color: rgb(255, 128, 128);
+    text-decoration: none;
+    transition: color 0.3s ease-in-out;
+}
+
+/* Navigation Links */
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+    align-items: center;
+    flex-grow: 1;
+    justify-content: center;
+}
+
+.nav-links a {
+    color: #F0F8FF;
+    text-decoration: none;
+    font-size: 1.1rem;
+    font-weight: bold;
+    transition: 0.3s;
+    padding: 8px 12px;
+    border-radius: 5px;
+}
+
+.nav-links a:hover {
+    background: rgba(255, 255, 255, 0.2);
+    color: #FFD700;
+}
+
+/* Dropdown */
+.dropdown {
+    position: relative;
+}
+
+.dropdown-menu {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background: #333;
+    list-style: none;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+.dropdown:hover .dropdown-menu {
+    display: block;
+}
+
+/* 🔽 Smaller Dropdown Icon */
+.dropdown-icon {
+    font-size: 12px;  /* Decreased size */
+    margin-left: 5px;
+}
+
+/* Buttons */
+.nav-buttons {
+    display: flex;
+    gap: 12px;
+    align-items: center;
+}
+
+.donate-btn,
+.admin-btn {
+    background: linear-gradient(135deg, #FF512F, #DD2476);
+    padding: 8px 16px;
+    border-radius: 25px;
+    font-weight: bold;
+    color: white;
+    text-transform: uppercase;
+    border: none;
+    cursor: pointer;
+    white-space: nowrap;
+}
+
+.donate-btn:hover,
+.admin-btn:hover {
+    background: linear-gradient(135deg, #DD2476, #FF512F);
+    transform: scale(1.05);
+}

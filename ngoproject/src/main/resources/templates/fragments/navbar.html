@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" th:href="@{/css/navbar.css}">
+	
+
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+            <div class="logo">
+                <a th:href="@{/}">Glob TechPower Foundation</a>
+            </div>
+            <ul class="nav-links">
+                <li><a th:href="@{/}">Home</a></li>
+                <li class="dropdown">
+                    <a href="#about-us">About Us ▼</a>
+                    <ul class="dropdown-menu">
+                        <li><a href='#who-we-are'>Who We Are?</a></li>
+                        <li><a href='#vision'>Vision</a></li>
+                        <li><a href='#mission'>Mission</a></li>
+                        <li><a href='#values'>Our Values</a></li>
+                        <li><a href='#approach'>Our Approach</a></li>
+                    </ul>
+                </li>
+                <li class="dropdown">
+                    <a href="#">Our Programs ▼</a>
+                    <ul class="dropdown-menu">
+                        <li><a th:href="@{/programs/coding-on-wheels}">Coding on Wheels</a></li>
+                        <li><a th:href="@{/programs/coding-education}">Coding Education in Schools</a></li>
+                        <li><a th:href="@{/programs/women-empowerment}">Women Empowerment</a></li>
+                        <li><a th:href="@{/programs/livelihoods}">Livelihoods</a></li>
+                    </ul>
+                </li>
+                <li class="dropdown">
+                    <a href="#">Campaigns ▼</a>
+                    <ul class="dropdown-menu">
+                        <li><a th:href="@{/campaigns/padho-bhi}">Padho Bhi Padhao Bhi</a></li>
+                        <li><a th:href="@{/campaigns/corporate-training}">Corporate Training for Social Impact</a></li>
+                    </ul>
+                </li>
+                <li class="dropdown">
+                    <a href="#">Resources ▼</a>
+                    <ul class="dropdown-menu">
+                        <li><a th:href="@{/resources/media}">Media</a></li>
+                        <li><a th:href="@{/resources/gallery}">Gallery</a></li>
+                        <li><a th:href="@{/resources/annual-reports}">Annual Reports</a></li>
+                        <li><a th:href="@{/resources/publications}">Publications</a></li>
+                    </ul>
+                </li>
+                <li class="dropdown">
+                    <a href="#">Get Involved ▼</a>
+                    <ul class="dropdown-menu">
+                        <li><a th:href="@{/get-involved/individual-support}">Support from Individuals</a></li>
+                        <li><a th:href="@{/get-involved/payroll-giving}">Payroll Giving</a></li>
+                        <li><a th:href="@{/get-involved/sponsorships}">Sponsorships</a></li>
+                        <li><a th:href="@{/get-involved/volunteer}">Volunteer & Internship</a></li>
+                        <li><a th:href="@{/get-involved/career}">Career (Coming Soon)</a></li>
+                    </ul>
+                </li>
+                <li><a th:href="@{/contact}">Contact Us</a></li>
+                <li><a th:href="@{/donate}" class="donate-btn">Donate</a></li>
+				<!--Admin dashboard-->
+				<li><a href="/admin" class="admin-btn">Admin</a></li>
+            </ul>
+			
+			
+        </nav>
+		
+    </header>
+</body>
+</html>

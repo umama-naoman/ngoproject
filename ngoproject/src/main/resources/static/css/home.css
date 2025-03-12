@@ -1,0 +1,383 @@
+.hero {
+    background: url('/images/hero_bg.jpg');
+    background-size: cover;
+    background-position: center;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: white;
+    position: relative;
+    padding-top: 200px; 
+}
+
+.hero-content {
+    max-width: 900px;
+    padding: 20px;
+	border-radius: 50px;
+}
+
+.hero h1 {
+    font-size: 3.5rem;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+.hero p {
+    font-size: 1.5rem;
+    margin-bottom: 30px;
+}
+
+.cta-buttons {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+}
+
+.btn {
+    background: linear-gradient(135deg, #FF512F, #DD2476);
+    padding: 12px 30px;
+    border-radius: 50px;
+    font-size: 1.2rem;
+    color: white;
+    text-transform: uppercase;
+    transition: 0.3s;
+    text-decoration: none;
+}
+
+.btn-secondary {
+    background: transparent;
+    border: 2px solid white;
+}
+
+.btn:hover {
+    transform: scale(1.05);
+    opacity: 0.9;
+}
+
+/* About Us Section */
+.about-us {
+    padding: 80px 0;
+    background: #f8f9fa;
+}
+
+.about-us .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.about-us h2 {
+    font-size: 2.5rem;
+    text-align: center;
+    margin-bottom: 40px;
+    color: #333;
+}
+
+.about-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+}
+
+.about-card {
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    text-align: center;
+	overflow: hidden;
+    transition: 0.3s;
+}
+
+.about-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+}
+
+.about-card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 10px 10px 0 0;
+}
+
+.about-card h3 {
+    font-size: 1.8rem;
+    margin: 20px 0 10px;
+    color: #444;
+	padding: 0 20px;
+}
+
+.about-card p {
+    font-size: 1.1rem;
+    color: #555;
+    line-height: 1.6;
+	padding: 0 0 20px;
+}
+
+/* Our Programs Section */
+.our-programs {
+    padding: 80px 0;
+    background: white;
+}
+
+.our-programs h2 {
+    font-size: 2.5rem;
+    text-align: center;
+    margin-bottom: 40px;
+    color: #333;
+}
+
+.program-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+}
+
+.program-card {
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    transition: 0.3s;
+}
+
+.program-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+}
+
+.program-card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+.program-card h3 {
+    font-size: 1.8rem;
+    margin: 20px 0 10px;
+    color: #444;
+    padding: 0 20px;
+}
+
+.program-card p {
+    font-size: 1.1rem;
+    color: #555;
+    line-height: 1.6;
+    padding: 0 20px 20px;
+}
+
+.program-card .btn {
+    display: block;
+    margin: 0 20px 20px;
+    text-align: center;
+}
+
+/* Campaigns Section */
+.campaigns {
+    padding: 80px 0;
+    background: #f8f9fa;
+}
+
+.campaigns h2 {
+    font-size: 2.5rem;
+    text-align: center;
+    margin-bottom: 40px;
+    color: #333;
+}
+
+.campaign-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+}
+
+.campaign-card {
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    transition: 0.3s;
+}
+
+.campaign-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+}
+
+.campaign-card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+.campaign-card h3 {
+    font-size: 1.8rem;
+    margin: 20px 0 10px;
+    color: #444;
+    padding: 0 20px;
+}
+
+.campaign-card p {
+    font-size: 1.1rem;
+    color: #555;
+    line-height: 1.6;
+    padding: 0 20px 20px;
+}
+
+.campaign-card .btn {
+    display: block;
+    margin: 0 20px 20px;
+    text-align: center;
+}
+
+/* Get Involved Section */
+.get-involved {
+    padding: 80px 0;
+    background: white;
+}
+
+.get-involved h2 {
+    font-size: 2.5rem;
+    text-align: center;
+    margin-bottom: 40px;
+    color: #333;
+}
+.get-involved h3 {
+    font-size: 1.5rem;
+    text-align: center;
+    margin-bottom: 40px;
+    color: #333;
+}
+
+.get-involved h4 {
+    font-size: 1.5rem;
+    text-align: center;
+    margin-bottom: 40px;
+    color: #333;
+}
+.involve-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+}
+
+.involve-card {
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    text-align: center;
+    transition: 0.3s;
+}
+
+.involve-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+}
+
+.involve-card i {
+    color: #FF512F;
+    margin-bottom: 20px;
+}
+
+.involve-card h3 {
+    font-size: 1.8rem;
+    margin-bottom: 10px;
+    color: #444;
+}
+
+.involve-card p {
+    font-size: 1.1rem;
+    color: #555;
+    line-height: 1.6;
+    margin-bottom: 20px;
+}
+
+.involve-card .btn {
+    display: block;
+    margin: 0 auto;
+}
+
+/* Footer Section */
+footer {
+    background: #1F1C2C;
+    color: white;
+    padding: 40px 0;
+}
+
+.footer-content {
+    display: flex;
+    justify-content: space-between;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.footer-section {
+    flex: 1;
+}
+
+.footer-section h3 {
+    font-size: 1.5rem;
+    margin-bottom: 20px;
+}
+
+.footer-section ul {
+    list-style: none;
+    padding: 0;
+}
+
+.footer-section ul li {
+    margin-bottom: 10px;
+}
+
+.footer-section ul li a {
+    color: white;
+    text-decoration: none;
+    transition: 0.3s;
+}
+
+.footer-section ul li a:hover {
+    color: #FF512F;
+}
+
+.social-icons {
+    display: flex;
+    gap: 20px;
+}
+
+.social-icons a {
+    color: white;
+    font-size: 1.5rem;
+    transition: 0.3s;
+}
+
+.social-icons a:hover {
+    color: #FF512F;
+}
+
+.footer-bottom {
+    text-align: center;
+    margin-top: 20px;
+    padding-top: 20px;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.footer-bottom p {
+    margin: 0;
+}
+
+/* Footer Section */
+footer {
+    background: #1F1C2C;
+    color: white;
+    text-align: center;
+    padding: 20px 0;
+}
+
+footer p {
+    margin: 0;
+}

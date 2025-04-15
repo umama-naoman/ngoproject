@@ -1,12 +1,10 @@
 /* Navbar Styling */
 .navbar {
     display: flex;
-    justify-content: space-evenly;
+    flex-direction: column;
     align-items: center;
-	flex-wrap: wrap;
     background: linear-gradient(135deg, #1F1C2C, rgb(0, 128, 192));
-	padding: 20px 20px;  
-	min-height: 100px;    
+    padding: 15px 0px; /* Increased space */
     position: fixed;
     width: 100%;
     top: 0;
@@ -15,38 +13,72 @@
     box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
 }
 
-/* Navbar Flex Container */
-.nav-container {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    width: 100%;
-    
+body {
+    padding-top: 120px; /* Adjust based on navbar height */
 }
 
-/* Logo */
-.logo a {
+/* Foundation Name: Centered with Space Above */
+.foundation-container {
+    width: 100%;
+    text-align: center;
+    margin-bottom: 10px; /* Adds space below the foundation name */
+}
+
+.foundation-name a {
+    display: flex; /* Changed from block */
+    align-items: center; /* Centers vertically */
     font-size: 2rem;
     font-weight: bold;
     color: rgb(255, 128, 128);
     text-decoration: none;
-    transition: color 0.3s ease-in-out;
+    height: 100%; /* Takes full height */
+}
+/* Foundation Name with Logo */
+.foundation-name {
+    display: flex;
+    align-items: center; /* This vertically centers logo and text */
+    gap: 15px;
+	padding-left: 10px;
+    justify-content: center;
+	max-width: 100%; /* Prevents overflow */
+	white-space: nowrap; /* Prevents text from wrapping */
 }
 
-/* Navigation Links */
+/* Logo Styling */
+.foundation-name img {
+    width: 60px; /* Adjust size as needed */
+    height: auto; /* Ensures a perfect circle */
+    border-radius: 50%; /* Makes it a circle */
+    object-fit: contain; /* Ensures the image fills the circle without distortion */
+	border: 2px solid rgb(0, 0, 64);
+
+    margin-right: 12px; /* Space between logo and text */
+    padding: 0px;
+	}
+
+/* Navbar Flex Container */
+.nav-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    padding: 5px 0px;
+}
+
+/* Navigation Links: Fit in One Line */
 .nav-links {
     list-style: none;
     display: flex;
-    gap: 20px;
+    gap: 10px;
     align-items: center;
+    justify-content: flex-start;
     flex-grow: 1;
-    justify-content: center;
 }
 
 .nav-links a {
     color: #F0F8FF;
     text-decoration: none;
-    font-size: 1.1rem;
+    font-size: 1rem;
     font-weight: bold;
     transition: 0.3s;
     padding: 8px 12px;
@@ -54,8 +86,8 @@
 }
 
 .nav-links a:hover {
-    background: rgba(255, 255, 255, 0.2);
-    color: #FFD700;
+    background: #ff6600;
+    border-radius: 5px;
 }
 
 /* Dropdown */
@@ -67,32 +99,55 @@
     display: none;
     position: absolute;
     top: 100%;
-    left: 0;
+    left: 50%;
+    transform: translateX(-50%);
     background: #333;
     list-style: none;
     padding: 10px;
     border-radius: 5px;
+    min-width: 200px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease, visibility 0.3s ease, transform 0.3s ease;
 }
 
+.dropdown-menu li {
+    padding: 8px 15px;
+    white-space: nowrap; /* Prevents text wrapping */
+}
+
+.dropdown-menu a {
+    color: #F0F8FF;
+    text-decoration: none;
+    display: block;
+    font-size: 1rem;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+.dropdown-menu a:hover {
+    background: #ff6600;
+    border-radius: 5px;
+    padding: 8px;
+}
+
+/* Show Dropdown */
 .dropdown:hover .dropdown-menu {
     display: block;
+    opacity: 1;
+    visibility: visible;
+    transform: translateX(-50%) translateY(5px);
 }
 
-/* 🔽 Smaller Dropdown Icon */
-.dropdown-icon {
-    font-size: 12px;  /* Decreased size */
-    margin-left: 5px;
-}
-
-/* Buttons */
+/* Navbar Buttons */
 .nav-buttons {
     display: flex;
-    gap: 12px;
+    gap: 10px;
     align-items: center;
 }
 
-.donate-btn,
-.admin-btn {
+.nav-btn {
     background: linear-gradient(135deg, #FF512F, #DD2476);
     padding: 8px 16px;
     border-radius: 25px;
@@ -101,11 +156,29 @@
     text-transform: uppercase;
     border: none;
     cursor: pointer;
-    white-space: nowrap;
+    text-decoration: none;
+    text-align: center;
+    transition: all 0.3s ease-in-out;
 }
 
-.donate-btn:hover,
-.admin-btn:hover {
+/* Hover Effect */
+.nav-btn:hover {
     background: linear-gradient(135deg, #DD2476, #FF512F);
     transform: scale(1.05);
 }
+
+
+
+
+/* Ensure responsiveness */
+@media screen and (max-width: 768px) {
+    .foundation-name {
+        flex-direction: column; /* Stack logo and text on small screens */
+        text-align: center;
+    }
+
+    .foundation-name img {
+        height: 40px; /* Adjust for smaller screens */
+    }
+}
+

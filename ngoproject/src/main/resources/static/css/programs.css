@@ -1,57 +1,112 @@
-/* Our Programs Section */
-.our-programs {
-    padding: 80px 0;
-    background: white;
-}
-
-.our-programs h2 {
-    font-size: 2.5rem;
+.container {
+    max-width: 1100px;
+    margin: 80px auto 50px;
+    padding: 20px;
     text-align: center;
-    margin-bottom: 40px;
-    color: #333;
 }
 
-.program-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 20px;
+.program-section {
+	display: flex;
+	    align-items: center;
+	    gap: 30px;
+	    background: linear-gradient(135deg, #fff, #f9f9f9);
+	    padding: 35px;
+	    margin-bottom: 35px;
+	    border-radius: 15px;
+	    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.12), 0 1px 3px rgba(0, 0, 0, 0.08);
+	    text-align: left;
+	    transition: transform 0.3s ease, box-shadow 0.3s ease, border 0.3s ease;
+	    border: 1px solid rgba(0, 0, 0, 0.08);
+	    overflow: hidden;
+	    position: relative;
 }
 
-.program-card {
-    background: white;
-    border-radius: 10px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-    overflow: hidden;
-    transition: 0.3s;
+.program-section .content {
+    width: 58%;
 }
 
-.program-card:hover {
-    transform: translateY(-10px);
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+
+/* Subtle glowing border on hover */
+.program-section:hover {
+    transform: translateY(-6px) scale(1.02);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.18), 0 4px 6px rgba(0, 0, 0, 0.12);
+    border: 1px solid rgba(255, 87, 51, 0.4);
 }
 
-.program-card img {
-    width: 100%;
-    height: 200px;
+/* soft glowing gradient border */
+.program-section::before {
+    content: "";
+    position: absolute;
+    inset: -3px;
+    background: linear-gradient(120deg, rgba(255, 87, 51, 0.3), rgba(255, 200, 51, 0.3));
+    z-index: -1;
+    border-radius: 15px;
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out;
+}
+
+.program-section:hover::before {
+    opacity: 1;
+}
+
+/* Alternate section alignment */
+.program-section:nth-child(even) {
+    flex-direction: row-reverse;
+}
+
+/* Image Styling */
+.program-section img {
+    width: 38%;
+    max-width: 420px;
+    border-radius: 12px;
     object-fit: cover;
+    height: auto;
+	border: 4px solid #ff5733;
+  
+    transition: transform 0.3s ease-in-out;
 }
 
-.program-card h3 {
-    font-size: 1.8rem;
-    margin: 20px 0 10px;
-    color: #444;
-    padding: 0 20px;
+/* Slight zoom effect on image hover */
+.program-section:hover img {
+    transform: scale(1.05);
 }
 
-.program-card p {
-    font-size: 1.1rem;
-    color: #555;
-    line-height: 1.6;
-    padding: 0 20px 20px;
+/* Content Text Styling */
+.program-section p {
+    font-size: 1.2rem;
+    color: #555; 
+    line-height: 1.75;
+    font-weight: 500;
 }
 
-.program-card .btn {
-    display: block;
-    margin: 0 20px 20px;
-    text-align: center;
+/* Heading Styling */
+.program-section h2 {
+    font-size: 2.2rem;
+    font-weight: 700;
+    color: #e8432e; 
+    margin-bottom: 18px;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .program-section {
+        flex-direction: column !important;
+        text-align: center;
+        padding: 30px;
+    }
+
+    .program-section img {
+        width: 90%;
+        max-width: 100%;
+        aspect-ratio: auto;
+    }
+
+    .program-section p {
+        width: 100%;
+        font-size: 1.15rem;
+    }
+
+    .program-section h2 {
+        font-size: 2rem;
+    }
 }

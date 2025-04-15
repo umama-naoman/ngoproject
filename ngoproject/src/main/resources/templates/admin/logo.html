@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Upload Logo</title>
+    <link rel="stylesheet" th:href="@{/css/admin.css}" />
+    <link rel="stylesheet" th:href="@{/css/navbar.css}" />
+</head>
+<body class="admin-dashboard">
+    <!-- NAVBAR -->
+    <nav th:replace="fragments/navbar :: navbar"></nav>
+    
+    <div class="admin-container">
+        <!-- SIDEBAR -->
+        <aside class="sidebar">
+            <ul>
+                <li><a href="/admin/home_img" class="btn-upload">Upload Image</a></li>
+                <li><a href="/admin/uploaded-images" class="btn-manage">Manage Images</a></li>
+                <li><a href="/admin/cards" class="btn-cards">Manage Cards</a></li>
+                <li><a href="/admin/users" class="btn-cards">Make Admin</a></li>
+                <li><a href="/admin/logo" class="btn-active">Upload Logo</a></li>
+            </ul>
+        </aside>
+
+        <!-- MAIN CONTENT -->
+        <main class="main-content">
+            <div class="upload-logo-box">
+                <h2>Upload Logo</h2>
+				<form th:action="@{/admin/logo}" method="post" enctype="multipart/form-data">
+				        <input type="file" name="file" required>
+				        <button type="submit">Upload</button>
+				    </form>
+
+				    <p th:text="${message}"></p>
+
+				    <!-- Show Uploaded Logo -->
+				    <div th:if="${logoFilename}">
+				        <h3>Current Logo:</h3>
+				        <img th:src="@{/logos/{filename}(filename=${logoFilename})}" alt="Company Logo" width="150">
+				    </div>
+            </div>
+        </main>
+    </div>
+
+</body>
+</html>

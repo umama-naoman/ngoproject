@@ -1,23 +1,77 @@
-<!-- Our Programs Section -->
-<section id="our-programs" class="our-programs">
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our Programs</title>
+    <link rel="stylesheet" th:href="@{/css/navbar.css}">
+    <link rel="stylesheet" th:href="@{/css/programs.css}">
+</head>
+<body>
+
+    <!-- Navbar -->
+    <header th:replace="fragments/navbar :: navbar"></header>
+
+    <!-- Main Content -->
     <div class="container">
-        <h2>Our Programs</h2>
-        <div class="program-grid">
-            <!-- Coding on Wheels -->
-            <div class="program-card">
-                <img th:src="@{/images/coding-on-wheels.jpg}" alt="Coding on Wheels">
-                <h3>Coding on Wheels</h3>
-                <p>Empowering destitute students in orphanages with coding education.</p>
-                <a th:href="@{/programs/coding-on-wheels}" class="btn">Learn More</a>
+        <h1 class="page-title">Our Programs</h1>
+
+        <!-- Coding on Wheels -->
+        <section id="coding-on-wheels" class="program-section">
+            <img src="/images/coding_on_wheels.jpg" alt="Coding on Wheels">
+            <div class="content">
+                <h2>Coding on Wheels</h2>
+                <p>
+					The "Coding on Wheels" project is a transformative initiative of Global Technopower 
+					Foundation (GTPF) dedicated to empowering the most vulnerable and often overlooked 
+					members of our society: Destitute students in orphanage. These children face unique 
+					challenges, and our project is committed to bridging the digital divide for them. 
+					With a mobile learning unit equipped with cutting-edge technology and expert 
+					instructors, we take the world of coding and computer science directly to the 
+					doorsteps of orphanages. By providing interactive coding lessons, workshops, and 
+					engaging activities, we introduce these students to the exciting world of technology.
+                </p>
             </div>
-            <!-- Women Empowerment -->
-            <div class="program-card">
-                <img th:src="@{/images/women-empowerment.jpg}" alt="Women Empowerment">
-                <h3>Women Empowerment</h3>
-                <p>Providing health and hygiene education to women and girls.</p>
-                <a th:href="@{/programs/women-empowerment}" class="btn">Learn More</a>
+        </section>
+
+        <!-- Coding Education in Government Schools -->
+        <section id="coding-education" class="program-section">
+            <img src="/images/coding_govt_schl.jpg" alt="Coding Education">
+            <div class="content">
+                <h2>Coding Education in Government Schools</h2>
+                <p>
+					We are bringing the gift of coding education to the most deserving students those in 
+					grades 8 to 10, hailing from marginalized backgrounds, and attending under-resourced 
+					government schools. Our mission is clear—to bridge the educational gap and empower 
+					these young minds with the digital skills they need to thrive in the 21st century. 
+					For students who lack basic resources and quality education, our program is a 
+					game-changer. It's a gateway to a world of innovation and opportunity. 
+					Join us in equipping these resilient students with the tools they need to break free 
+					from the cycle of marginalization and disadvantage in this digital edge. Together, 
+					we are empowering the next generation with the tools they need to succeed and shape 
+					a brighter tomorrow.
+                </p>
             </div>
-            <!-- Add more programs as needed -->
-        </div>
+        </section>
+
+        <!-- Women Empowerment -->
+        <section id="women-empowerment" class="program-section">
+            <img src="/images/women_empower.jpg" alt="Women Empowerment">
+            <div class="content">
+                <h2>Women Empowerment</h2>
+                <p>
+					We aim to championing a transformative mission of empowering women and girls to 
+					reclaim their lives from the clutches of monthly discomfort and pain. Our intervention 
+					is simple yet profound - providing access to Mihir organic rice, a natural remedy with 
+					the potential to alleviate menstrual agony.
+
+					Beyond mere distribution, we are igniting a movement. We conduct awareness programs, 
+					nurturing health and hygiene education, equipping women and girls with the knowledge 
+					to manage their menstrual health confidently.
+                </p>
+            </div>
+        </section>
     </div>
-</section>
+
+</body>
+</html>

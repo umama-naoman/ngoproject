@@ -3,13 +3,18 @@
 <head>
     <title>Uploaded Images</title>
     <link rel="stylesheet" th:href="@{/css/admin.css}" />
+	<link rel="stylesheet" th:href="@{/css/navbar.css}" />
 </head>
 <body>
+
+    <!-- Include Navbar -->
+    <div th:replace="fragments/navbar :: navbar"></div>
+
     <div class="image-gallery">
         <h1>Uploaded Images</h1>
         <div class="images">
             <div th:each="image : ${images}">
-                <img th:src="@{/manual_uploads/{filename}(filename=${image})}" alt="Uploaded Image">
+                <img th:src="@{'/uploads/' + ${image}}" alt="Uploaded Image">
                 <form action="/admin/delete" method="post">
                     <input type="hidden" name="filename" th:value="${image}">
                     <button type="submit">Delete</button>
@@ -17,5 +22,6 @@
             </div>
         </div>
     </div>
+
 </body>
 </html>

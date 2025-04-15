@@ -1,49 +1,361 @@
+/* GLOBAL STYLES */
 body {
+    margin: 0;
+    padding: 10px;
     font-family: Arial, sans-serif;
-    background-color: #f4f4f4;
+    background-color: #1e1e2e; /* Dark but NOT black */
+    color: #fff;
+}
+
+/* ADMIN CONTAINER */
+.admin-container {
+    display: flex;
+    height: 100vh;
+}
+
+/* SIDEBAR */
+.sidebar {
+    width: 250px;
+    background: #282a36;
+    padding: 20px;
+    height: 100vh;
+    position: fixed;
+}
+
+.sidebar ul {
+    list-style: none;
+    padding: 0;
+}
+
+.sidebar ul li {
+    margin: 20px 0;
+}
+
+/* SIDEBAR BUTTONS */
+.sidebar ul li a {
+    text-decoration: none;
+    color: #fff;
+    font-size: 18px;
+    display: block;
+    padding: 12px;
+    border-radius: 5px;
+    background: #44475a;
+    text-align: center;
+    transition: background 0.3s;
+}
+
+.sidebar ul li a:hover {
+    background: #5a5f7a;
+}
+
+/* Move upload & manage buttons down */
+.sidebar ul {
+    margin-top: 50px; /* Adjust the gap below the sidebar title if needed */
+}
+
+/* CONTENT AREA */
+.main-content {
+    margin-left: 260px;
+    width: calc(100% - 260px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    position: relative;
+}
+
+/* WELCOME BOX */
+.welcome-box {
+    background: rgba(255, 255, 255, 0.1);
+    padding: 40px;
+    border-radius: 10px;
+    text-align: center;
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.2);
+    width: 50%;
+    position: absolute;
+    top: 30%; /* Moves the box slightly upwards */
+    transform: translateY(-30%);
+}
+
+/* WELCOME TEXT */
+.welcome-text {
+    font-size: 32px;
+    font-weight: bold;
+    color: #FFD700;
+    text-shadow: 2px 2px 4px rgba(255, 215, 0, 0.4);
+    margin-bottom: 10px;
+}
+
+/* SELECT OPTION TEXT */
+.select-text {
+    font-size: 22px;
+    color: #87CEFA;
+    font-style: italic;
+    text-shadow: 1px 1px 3px rgba(135, 206, 250, 0.4);
+    margin-bottom: 20px;
+}
+
+/* BUTTONS */
+.button-container {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+}
+
+.btn {
+    text-decoration: none;
+    padding: 12px 24px;
+    font-size: 18px;
+    font-weight: bold;
+    border-radius: 5px;
+    transition: 0.3s;
+    color: white;
     text-align: center;
 }
 
-.admin-container {
-    margin: 50px auto;
-    padding: 20px;
-    max-width: 600px;
-    background: white;
-    border-radius: 10px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+.btn-upload {
+    background: #4CAF50;
 }
 
-.admin-options a {
-    display: block;
-    margin: 10px;
+.btn-upload:hover {
+    background: #45a049;
+}
+
+.btn-manage {
+    background: #008CBA;
+}
+
+.btn-manage:hover {
+    background: #007bb5;
+}
+/* Upload & Manage Images - Common Styling */
+.upload-container,
+.image-gallery {
+    width: 80%;
+    margin: 70px auto;
+    padding: 40px;
+    background: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+/* Page Title */
+.upload-container h1,
+.image-gallery h1 {
+    color: #333;
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+/* Upload Form */
+.upload-container form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+}
+
+.upload-container input[type="file"] {
     padding: 10px;
-    background: #007bff;
-    color: white;
-    text-decoration: none;
+    border: 1px solid #ddd;
     border-radius: 5px;
 }
 
-.upload-container {
-    margin: 50px auto;
-    padding: 20px;
-    max-width: 400px;
-    background: white;
-    border-radius: 10px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+/* Upload Button */
+.upload-container button {
+    background-color: #007bff;
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.3s ease;
 }
 
-.image-gallery {
-    margin: 50px auto;
-    padding: 20px;
-    max-width: 700px;
-    background: white;
-    border-radius: 10px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+.upload-container button:hover {
+    background-color: #0056b3;
+}
+
+/* Image Gallery */
+.images {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 15px;
 }
 
 .images img {
     width: 200px;
-    height: auto;
-    margin: 10px;
+    height: 150px;
+    object-fit: cover;
     border-radius: 5px;
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.2);
 }
+
+/* Delete Button */
+.images form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.images form button {
+    background-color: #ff4d4d;
+    color: white;
+    padding: 5px 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+.images form button:hover {
+    background-color: #cc0000;
+}
+
+/* USERS PAGE STYLING */
+.admin-users-container {
+    margin-left: 260px;
+    width: calc(100% - 260px);
+    padding: 40px;
+    background: #1e1e2e;
+    min-height: 100vh;
+    color: white;
+    overflow-x: auto;
+}
+
+/* Page Heading */
+.admin-users-container h1 {
+    text-align: center;
+    font-size: 28px;
+    margin-bottom: 20px;
+    color: #FFD700;
+    text-shadow: 2px 2px 4px rgba(255, 215, 0, 0.4);
+}
+
+/* USER TABLE */
+.user-table-container {
+    background: rgba(255, 255, 255, 0.1);
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.2);
+    overflow-x: auto;
+}
+
+.user-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+.user-table thead {
+    background: #44475a;
+}
+
+.user-table th, 
+.user-table td {
+    padding: 12px;
+    text-align: left;
+    border-bottom: 1px solid #444;
+}
+
+.user-table th {
+    color: white;
+    font-size: 16px;
+}
+
+.user-table tbody tr {
+    transition: background 0.3s;
+}
+
+.user-table tbody tr:hover {
+    background: rgba(255, 255, 255, 0.1);
+}
+
+/* ACTION BUTTONS */
+.action-buttons {
+    display: flex;
+    gap: 10px;
+}
+
+.action-buttons .btn {
+    padding: 8px 14px;
+    font-size: 14px;
+    border-radius: 5px;
+    text-decoration: none;
+    color: white;
+    cursor: pointer;
+    transition: 0.3s ease;
+    text-align: center;
+}
+
+.btn-edit {
+    background: #4CAF50;
+}
+
+.btn-edit:hover {
+    background: #45a049;
+}
+
+.btn-delete {
+    background: #ff4d4d;
+}
+
+.btn-delete:hover {
+    background: #cc0000;
+}
+
+/* RESPONSIVE TABLE */
+@media screen and (max-width: 768px) {
+    .admin-users-container {
+        margin-left: 0;
+        width: 100%;
+        padding: 20px;
+    }
+
+    .user-table-container {
+        padding: 15px;
+    }
+
+    .user-table th,
+    .user-table td {
+        font-size: 14px;
+        padding: 8px;
+    }
+
+    .action-buttons .btn {
+        padding: 6px 10px;
+        font-size: 12px;
+    }
+
+}
+
+.upload-logo-box {
+    text-align: center;
+    padding: 20px;
+    background: rgb(192, 192, 192);
+    border-radius: 8px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.upload-logo-box h2 {
+    color: #333;
+}
+
+.upload-logo-box input {
+    margin: 10px 0;
+}
+
+.success-message {
+    color: green;
+    font-weight: bold;
+    margin-top: 10px;
+}
+
+.logo-preview img {
+    max-width: 150px;
+    margin-top: 10px;
+}
+
+

@@ -3,14 +3,32 @@
 <head>
     <title>Admin Dashboard</title>
     <link rel="stylesheet" th:href="@{/css/admin.css}" />
+    <link rel="stylesheet" th:href="@{../css/navbar.css}">
 </head>
-<body>
+<body class="admin-dashboard">
+    <!-- NAVBAR -->
+    <nav th:replace="fragments/navbar :: navbar"></nav>
+	
     <div class="admin-container">
-        <h1>Admin Dashboard</h1>
-        <div class="admin-options">
-            <a href="/admin/home_img">Upload Homepage Image</a>
-            <a href="/admin/uploaded-images">View Uploaded Images</a>
-        </div>
+        <!-- SIDEBAR -->
+		<aside class="sidebar">
+		    <ul>
+		        <li><a th:href="@{/admin/home_img}" class="btn-upload">Upload Image</a></li>
+		        <li><a th:href="@{/admin/uploaded-images}" class="btn-manage">Manage Images</a></li>
+		        <li><a th:href="@{/admin/cards}" class="btn-cards">Manage Cards</a></li> 
+		        <li><a th:href="@{/admin/users}" class="btn-cards">Make Admin</a></li>
+		        <li><a th:href="@{/admin/logo}" class="btn-cards">Upload Logo</a></li>
+		    </ul>
+		</aside>
+
+        <!-- MAIN CONTENT -->
+        <main class="main-content">
+            <div class="welcome-box">
+                <h1 class="welcome-text">Welcome to Admin Panel</h1>
+                <p class="select-text">Select an option from the sidebar</p>
+            </div>
+        </main>
     </div>
+
 </body>
 </html>

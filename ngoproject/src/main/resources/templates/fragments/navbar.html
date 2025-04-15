@@ -3,71 +3,93 @@
 <head>
     <meta charset="UTF-8">
     <link rel="stylesheet" th:href="@{/css/navbar.css}">
-	
-
 </head>
 <body>
     <header>
-        <nav class="navbar">
-            <div class="logo">
-                <a th:href="@{/}">Glob TechPower Foundation</a>
+        <nav class="navbar" th:fragment="navbar">
+            <!-- Foundation Name on Separate Line with Space Above -->
+            <div class="foundation-container">
+                <div class="foundation-name">
+                    <a th:href="@{/}">
+						<img th:src="@{/uploads/logos/logo.png}" alt="Company Logo" >
+
+						Glob TechPower Foundation</a>
+                </div>
             </div>
-            <ul class="nav-links">
-                <li><a th:href="@{/}">Home</a></li>
-                <li class="dropdown">
-                    <a href="#about-us">About Us ▼</a>
-                    <ul class="dropdown-menu">
-                        <li><a href='#who-we-are'>Who We Are?</a></li>
-                        <li><a href='#vision'>Vision</a></li>
-                        <li><a href='#mission'>Mission</a></li>
-                        <li><a href='#values'>Our Values</a></li>
-                        <li><a href='#approach'>Our Approach</a></li>
-                    </ul>
-                </li>
-                <li class="dropdown">
-                    <a href="#">Our Programs ▼</a>
-                    <ul class="dropdown-menu">
-                        <li><a th:href="@{/programs/coding-on-wheels}">Coding on Wheels</a></li>
-                        <li><a th:href="@{/programs/coding-education}">Coding Education in Schools</a></li>
-                        <li><a th:href="@{/programs/women-empowerment}">Women Empowerment</a></li>
-                        <li><a th:href="@{/programs/livelihoods}">Livelihoods</a></li>
-                    </ul>
-                </li>
-                <li class="dropdown">
-                    <a href="#">Campaigns ▼</a>
-                    <ul class="dropdown-menu">
-                        <li><a th:href="@{/campaigns/padho-bhi}">Padho Bhi Padhao Bhi</a></li>
-                        <li><a th:href="@{/campaigns/corporate-training}">Corporate Training for Social Impact</a></li>
-                    </ul>
-                </li>
-                <li class="dropdown">
-                    <a href="#">Resources ▼</a>
-                    <ul class="dropdown-menu">
-                        <li><a th:href="@{/resources/media}">Media</a></li>
-                        <li><a th:href="@{/resources/gallery}">Gallery</a></li>
-                        <li><a th:href="@{/resources/annual-reports}">Annual Reports</a></li>
-                        <li><a th:href="@{/resources/publications}">Publications</a></li>
-                    </ul>
-                </li>
-                <li class="dropdown">
-                    <a href="#">Get Involved ▼</a>
-                    <ul class="dropdown-menu">
-                        <li><a th:href="@{/get-involved/individual-support}">Support from Individuals</a></li>
-                        <li><a th:href="@{/get-involved/payroll-giving}">Payroll Giving</a></li>
-                        <li><a th:href="@{/get-involved/sponsorships}">Sponsorships</a></li>
-                        <li><a th:href="@{/get-involved/volunteer}">Volunteer & Internship</a></li>
-                        <li><a th:href="@{/get-involved/career}">Career (Coming Soon)</a></li>
-                    </ul>
-                </li>
-                <li><a th:href="@{/contact}">Contact Us</a></li>
-                <li><a th:href="@{/donate}" class="donate-btn">Donate</a></li>
-				<!--Admin dashboard-->
-				<li><a href="/admin" class="admin-btn">Admin</a></li>
-            </ul>
-			
-			
+
+            <!-- Navigation Links in a Single Line -->
+            <div class="nav-container">
+                <ul class="nav-links">
+                    <li><a th:href="@{/}">Home</a></li>
+                    <li class="dropdown">
+                        <a th:href="@{/about}">About Us ▾</a>
+                        <ul class="dropdown-menu">
+                            <li><a href='#who-we-are'>Who We Are?</a></li>
+                            <li><a href='#vision'>Vision</a></li>
+                            <li><a href='#mission'>Mission</a></li>
+                            <li><a href='#values'>Our Values</a></li>
+                            <li><a href='#approach'>Our Approach</a></li>
+                        </ul>
+                    </li>
+                    <li class="dropdown">
+                        <a th:href="@{/programs}">Our Programs ▾</a>
+                        <ul class="dropdown-menu">
+                            <li><a th:href="@{/programs/coding-on-wheels}">Coding on Wheels</a></li>
+                            <li><a th:href="@{/programs/coding-education}">Coding Education in Schools</a></li>
+                            <li><a th:href="@{/programs/women-empowerment}">Women Empowerment</a></li>
+                            <li><a th:href="@{/programs/livelihoods}">Livelihoods</a></li>
+                        </ul>
+                    </li>
+                    <li class="dropdown">
+                        <a th:href="@{/campaigns}">Campaigns ▾</a>
+                        <ul class="dropdown-menu">
+                            <li><a th:href="@{/campaigns/padho-bhi}">Padho Bhi Padhao Bhi</a></li>
+                            <li><a th:href="@{/campaigns/corporate-training}">Corporate Training for Social Impact</a></li>
+                        </ul>
+                    </li>
+                    <li class="dropdown">
+                        <a th:href="@{/resources}">Resources ▾</a>
+                        <ul class="dropdown-menu">
+                            <li><a th:href="@{/resources/media}">Media</a></li>
+                            <li><a th:href="@{/resources/gallery}">Gallery</a></li>
+                            <li><a th:href="@{/resources/annual-reports}">Annual Reports</a></li>
+                            <li><a th:href="@{/resources/publications}">Publications</a></li>
+                        </ul>
+                    </li>
+                    <li class="dropdown">
+                        <a th:href="@{/get-involved}">Get Involved ▾</a>
+                        <ul class="dropdown-menu">
+                            <li><a th:href="@{/get-involved/individual-support}">Support from Individuals</a></li>
+                            <li><a th:href="@{/get-involved/payroll-giving}">Payroll Giving</a></li>
+                            <li><a th:href="@{/get-involved/sponsorships}">Sponsorships</a></li>
+                            <li><a th:href="@{/get-involved/volunteer}">Volunteer & Internship</a></li>
+                            <li><a th:href="@{/get-involved/career}">Career (Coming Soon)</a></li>
+                        </ul>
+                    </li>
+                    <li><a th:href="@{/contact}">Contact Us</a></li>
+                </ul>
+
+                <!-- Buttons: Admin, Register, Login, Donate -->
+			    <div class="nav-buttons">
+		          <!-- ✅ Show Admin Dashboard Button Only for Admins -->
+				    <a th:if="${#authorization.expression('hasAuthority(''ADMIN'')')}" 
+				       th:href="@{/admin}" class="nav-btn admin-btn">Admin</a>
+
+				  <!-- ✅ Show Register and Login If User is NOT Logged In -->
+		     	    <a th:if="${#authorization.expression('isAnonymous()')}" th:href="@{/register}" class="nav-btn register-btn">New User? Register</a>
+				    <a th:if="${#authorization.expression('isAnonymous()')}" th:href="@{/login}" class="nav-btn login-btn">Login</a>
+
+			      <!-- ✅ Show "Donations" Button Always, But Redirect to Login if Not Logged In -->
+			        <a th:href="@{/donations}" class="nav-btn donate-btn">Donate</a>
+			    
+    			  <!-- ✅ Show Logout If User is Logged In -->
+				    <form th:if="${#authorization.expression('isAuthenticated()')}" th:action="@{/logout}" method="post">
+					 <button type="submit" class="nav-btn logout-btn">Logout</button>
+				    </form>
+				</div>
+
+            </div>
         </nav>
-		
     </header>
 </body>
 </html>

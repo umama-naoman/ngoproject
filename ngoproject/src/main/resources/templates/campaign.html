@@ -1,23 +1,95 @@
-<!-- Campaigns Section -->
-<section id="campaigns" class="campaigns">
-    <div class="container">
-        <h2>Campaigns</h2>
-        <div class="campaign-grid">
-            <!-- Padho Bhi Padhao Bhi -->
-            <div class="campaign-card">
-                <img th:src="@{/images/padho-bhi.jpg}" alt="Padho Bhi Padhao Bhi">
-                <h3>Padho Bhi Padhao Bhi</h3>
-                <p>Support orphanage students with coding education.</p>
-                <a th:href="@{/campaigns/padho-bhi}" class="btn">Donate Now</a>
-            </div>
-            <!-- Corporate Training -->
-            <div class="campaign-card">
-                <img th:src="@{/images/corporate-training.jpg}" alt="Corporate Training">
-                <h3>Corporate Training for Social Impact</h3>
-                <p>Empower employees while supporting underprivileged children.</p>
-                <a th:href="@{/campaigns/corporate-training}" class="btn">Learn More</a>
-            </div>
-            <!-- Add more campaigns as needed -->
-        </div>
-    </div>
-</section>
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our Campaigns</title>
+    <link rel="stylesheet" th:href="@{/css/campaign.css}">
+    <link rel="stylesheet" th:href="@{/css/navbar.css}">
+</head>
+<body>
+
+  <!-- Navbar -->
+  <header th:replace="fragments/navbar :: navbar"></header>
+
+  <!-- Main Content -->
+  <div class="container">
+     <h1 class="page-title">Our Campaigns</h1>
+
+    <!-- Padho Bhi Padhon Bhi -->
+    <section id="padho-bhi" class="campaign-section">
+      <img src="/images/campaign1.jpg" alt="Padho Bhi Padhon Bhi">
+      <div class="content">
+        <h2>Padho Bhi Padhao Bhi</h2>
+        <p><strong><em>Together, Let's Padho Bhi Padhao Bhi!</em></strong></p>
+        <p>
+            We are delighted to introduce the "Padho Bhi Padhon Bhi" campaign, a noble initiative 
+            aimed at transforming the lives of orphanage students by providing them with the 
+            invaluable gift of coding education under our project ‘Coding on Wheels’. Recognizing 
+            the power of education in fostering self-independence and a dignified life, we are 
+            reaching out to compassionate individuals, corporates, and well-to-do families to join 
+            hands in supporting this meaningful cause.
+        </p>
+        <p>
+            <strong>How you can contribute?</strong>
+        </p>
+        <ul>
+            <li><strong>Financial Support:</strong> Your generous contributions will directly fund 
+                coding education programs for orphanage students. Every donation, regardless of size, 
+                plays a crucial role in shaping a brighter future for these young minds.</li>
+            <li><strong>Spread the Word:</strong> Share the campaign across your networks and social 
+                media platforms. By raising awareness, we can garner broader support and reach our 
+                fundraising goals sooner.</li>
+            <li><strong>Corporate Sponsorship:</strong> We invite corporates to become partners in this 
+                noble endeavor. Corporate sponsorships can significantly impact the scale and reach of 
+                the coding education programs, creating a lasting positive effect on the lives of 
+                orphanage students.</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- Corporate Training for Social Impact -->
+    <section id="corporate-training" class="campaign-section">
+      <img src="/images/training.jpg" alt="Corporate Training">
+      <div class="content">
+        <h2>Corporate Training for Social Impact</h2>
+        <p><strong>"Shaping Futures: Join Us to Empower Orphan and Government School Students!"</strong></p>
+        <p>
+            Welcome to <strong><em>"Padho Bhi Padhon Bhi"</em></strong>, a trailblazing campaign 
+            that seamlessly integrates corporate growth with social responsibility. In this unique 
+            initiative, we present a golden opportunity for your company and employees to partake in 
+            transformative technology training while contributing to a noble cause.
+        </p>
+        <p>
+            <strong>How It Works?</strong>
+        </p>
+        <p>
+            Engage your employees in cutting-edge technology training, and in return, we request a 
+            minimum donation of 5000 rupees per participant. The accumulated donations will be 
+            directed towards providing coding education to orphanage students and underprivileged 
+            children in government schools, fostering a brighter and more technologically inclusive 
+            future.
+        </p>
+        <p>
+            <strong>Why Engage?</strong>
+        </p>
+        <ul>
+            <li><strong>Dual Impact:</strong> Your team's professional development aligns seamlessly 
+                with a philanthropic endeavor. Each training session becomes a gateway to personal growth 
+                for employees and a lifeline of opportunity for those in need.</li>
+            <li><strong>Social Empowerment:</strong> By contributing to the coding education of 
+                orphanage students and underprivileged youth, your company becomes a driving force in 
+                empowering marginalized communities, breaking barriers to education and fostering 
+                digital literacy.</li>
+            <li><strong>Corporate Social Responsibility (CSR) Amplified:</strong> "Padho aur Padhne Do" 
+                not only complements your CSR initiatives but enhances them.</li>
+            <li><strong>Collective Progress:</strong> This campaign encourages a collective approach 
+                to progress. As your team advances in tech proficiency, their journey becomes 
+                intertwined with the aspirations of those yearning for educational opportunities.</li>
+        </ul>
+      </div>
+    </section>
+  </div>
+
+</body>
+</html>

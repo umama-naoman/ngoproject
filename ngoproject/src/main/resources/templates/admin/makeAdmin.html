@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Admin Dashboard</title>
+    <link rel="stylesheet" th:href="@{/css/admin.css}" />
+    <link rel="stylesheet" th:href="@{../css/navbar.css}">
+</head>
+<body class="admin-dashboard">
+    <!-- NAVBAR -->
+    <nav th:replace="fragments/navbar :: navbar"></nav>
+
+	<div class="admin-container">
+	        <!-- SIDEBAR -->
+	        <aside class="sidebar">
+	            <ul>
+	                <li><a href="/admin/home_img" class="btn-upload">Upload Image</a></li>
+	                <li><a href="/admin/uploaded-images" class="btn-manage">Manage Images</a></li>
+	                <li><a href="/admin/cards" class="btn-cards">Manage Cards</a></li> 
+					<li><a href="/admin/users" class="btn-cards">Make Admin</a></li>
+					<li><a href="/admin/logo" class="btn-cards">Upload Logo</a></li>
+	 
+	            </ul>
+	        </aside>
+
+    <div class="admin-users-container">
+        <h1>User Management</h1>
+        <div class="user-table-container">
+            <table class="user-table">
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Username</th>
+                        <th>Email</th>
+                        <th>Role</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr th:each="user : ${users}">
+                        <td th:text="${user.id}"></td>
+                        <td th:text="${user.username}"></td>
+                        <td th:text="${user.email}"></td>
+                        <td th:text="${user.role}"></td>
+                        <td class="action-buttons">
+                            <!-- Make Admin Button -->
+                            <form th:action="@{/admin/make-admin}" method="post" style="display: inline;">
+                                <input type="hidden" name="email" th:value="${user.email}" />
+                                <button type="submit" class="btn btn-make-admin" th:if="${user.role == 'user'}">Make Admin</button>
+                            </form>
+                            
+                            <!-- Edit Button-->
+                            <button class="btn btn-edit">Edit</button>
+
+                            <!-- Delete Button -->
+                            <form th:action="@{/admin/delete-user}" method="post" style="display: inline;">
+                                <input type="hidden" name="email" th:value="${user.email}" />
+                                <button type="submit" class="btn btn-delete">Delete</button>
+                            </form>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+</body>
+</html>

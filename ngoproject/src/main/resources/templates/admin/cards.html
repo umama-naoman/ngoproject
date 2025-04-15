@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Manage Cards</title>
+    <link rel="stylesheet" th:href="@{/css/admin.css}" />
+	<link rel="stylesheet" th:href="@{../css/navbar.css}">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-ui/1.12.1/jquery-ui.min.js"></script>
+</head>
+<body>
+
+    <nav th:replace="fragments/navbar :: navbar"></nav>
+
+    <div class="admin-container">
+        <aside class="sidebar">
+            <ul>
+                <li><a href="/admin/home_img">Upload Image</a></li>
+                <li><a href="/admin/uploaded-images">Manage Images</a></li>
+                <li><a href="/admin/cards">Manage Cards</a></li>
+            </ul>
+        </aside>
+
+        <main class="main-content">
+            <h1>Manage Cards</h1>
+            
+            <button onclick="addCard()">Add New Card</button>
+
+            <ul id="card-list">
+                <li th:each="card : ${cards}" class="card-item" th:data-id="${card.id}">
+                    <img th:src="${card.imageUrl}" width="100">
+                    <h3 th:text="${card.title}"></h3>
+                    <p th:text="${card.description}"></p>
+                    <button onclick="deleteCard(this)" th:data-id="${card.id}">Delete</button>
+                </li>
+            </ul>
+
+            <button onclick="saveOrder()">Save Order</button>
+        </main>
+    </div>
+
+    <script>
+        $(document).ready(function() {
+            $("#card-list").sortable();
+        });
+
+        function addCard() {
+            let title = prompt("Enter title:");
+            let description = prompt("Enter description:");
+            let imageUrl = prompt("Enter image URL:");
+            
+            if (title && description && imageUrl) {
+                $.ajax({
+                    url: "/admin/cards",
+                    type: "POST",
+                    contentType: "application/json",
+                    data: JSON.stringify({ title, description, imageUrl }),
+                    success: function() {
+                        location.reload();
+                    }
+                });
+            }
+        }
+
+        function deleteCard(button) {
+            let cardId = $(button).data("id");
+            $.ajax({
+                url: "/admin/cards/" + cardId,
+                type: "DELETE",
+                success: function() {
+                    location.reload();
+                }
+            });
+        }
+
+        function saveOrder() {
+            let orderedIds = $("#card-list").sortable("toArray", { attribute: "data-id" });
+            console.log("New Order:", orderedIds);
+            alert("Card order saved! (Backend implementation needed)");
+        }
+    </script>
+
+</body>
+</html>

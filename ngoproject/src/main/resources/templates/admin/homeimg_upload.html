@@ -3,8 +3,13 @@
 <head>
     <title>Upload Homepage Image</title>
     <link rel="stylesheet" th:href="@{/css/admin.css}" />
+	<link rel="stylesheet" th:href="@{/css/navbar.css}" />
 </head>
 <body>
+
+    <!-- Include Navbar -->
+    <div th:replace="fragments/navbar :: navbar"></div>
+
     <div class="upload-container">
         <h1>Upload Homepage Image</h1>
         <form action="/admin/upload" method="post" enctype="multipart/form-data">
@@ -12,5 +17,6 @@
             <button type="submit">Upload</button>
         </form>
     </div>
+
 </body>
 </html>

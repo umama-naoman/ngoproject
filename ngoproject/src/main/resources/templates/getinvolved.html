@@ -1,29 +1,97 @@
-<!-- Get Involved Section -->
-<section id="get-involved" class="get-involved">
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Get Involved</title>
+    <link rel="stylesheet" th:href="@{/css/navbar.css}">
+    <link rel="stylesheet" th:href="@{/css/getinvolved.css}">
+</head>
+<body>
+
+    <!-- ✅ Navbar -->
+    <header th:replace="fragments/navbar :: navbar"></header>
+
+    <!-- ✅ Page Content -->
     <div class="container">
-        <h2>Get Involved</h2>
-        <div class="involve-grid">
-            <!-- Donate -->
-            <div class="involve-card">
-                <i class="fas fa-hand-holding-heart fa-3x"></i>
-                <h3>Donate</h3>
-                <p>Support our mission with a donation.</p>
-                <a th:href="@{/donate}" class="btn">Donate Now</a>
-            </div>
-            <!-- Volunteer -->
-            <div class="involve-card">
-                <i class="fas fa-users fa-3x"></i>
-                <h3>Volunteer</h3>
-                <p>Join us and make a difference.</p>
-                <a th:href="@{/volunteer}" class="btn">Volunteer</a>
-            </div>
-            <!-- Payroll Giving -->
-            <div class="involve-card">
-                <i class="fas fa-handshake fa-3x"></i>
-                <h3>Payroll Giving</h3>
-                <p>Support us through your salary.</p>
-                <a th:href="@{/payroll-giving}" class="btn">Learn More</a>
-            </div>
+        <h1 class="page-title">Get Involved</h1>
+        <p class="intro-text">Join us in making a difference! Explore the various ways you can support our mission.</p>
+
+        <!-- 📌 Quick Navigation Links -->
+        <div class="quick-links">
+            <a href="#support-individuals">Support from Individuals</a>
+            <a href="#payroll-giving">Payroll Giving</a>
+            <a href="#sponsorships">Sponsorships</a>
+            <a href="#volunteer">Volunteer & Internship</a>
+            <a href="#career">Career (Coming Soon)</a>
         </div>
+
+        <!-- 📌 Support from Individuals -->
+        <section id="support-individuals" class="involve-section">
+            <img src="/images/support-individuals.jpg" alt="Support from Individuals">
+            <div class="content">
+                <h2>Support from Individuals</h2>
+                <p>Your generosity supports a multifaceted impact, touching lives through education, empowering women,
+					 and fostering sustainable agriculture. Together, let's create a world where every individual, 
+					 regardless of their background, has the opportunity to thrive in a empowered and sustainable 
+					 community</p>
+            </div>
+        </section>
+
+        <!-- 📌 Payroll Giving -->
+        <section id="payroll-giving" class="involve-section">
+            <img src="/images/payroll-giving.jpg" alt="Payroll Giving">
+            <div class="content">
+                <h2>Payroll Giving</h2>
+                <p>Payroll Giving is a charitable giving program that allows employees to contribute a portion of 
+					their salary or wages for the social cause of their choice. This contribution is typically 
+					deducted automatically from the employee's paycheck. The employer facilitates this process, 
+					making it a convenient and efficient way for employees to support charitable causes. Small,
+				regular donations add up to significant support. Your monthly contributions, no matter the size, 
+				ensure a steady stream of assistance to those in need.
+				Payroll Giving provides employees with a convenient, tax benefits, and meaningful way to contribute 
+				to charitable causes, aligning their personal values with their workplace and fostering a sense of 
+				community and social responsibility.</p>
+            </div>
+        </section>
+
+        <!-- 📌 Sponsorships -->
+        <section id="sponsorships" class="involve-section">
+            <img src="/images/sponsorships.jpg" alt="Sponsorships">
+            <div class="content">
+                <h2>Sponsorships</h2>
+                <p>At our organization, we are on a mission to reach out to 15000 underprivileged students this year 
+					to bring meaningful impact on their lives through our innovative Coding Education, to empower
+					 10000 women through our Health and Hygiene Management initiative and reach out to 100 farmers 
+					 for the Sustainable Organic Farming. We understand the power of collaboration and the role that 
+					 businesses play in fostering positive change. We invite you to partner with us through our 
+					 sponsorship opportunities to create a lasting impact on our communities and beyond.
+                </p>
+				 </div>
+        </section>
+
+        <!-- 📌 Volunteer & Internship -->
+        <section id="volunteer" class="involve-section">
+            <img src="/images/volunteer.jpg" alt="Volunteer & Internship">
+            <div class="content">
+                <h2>Volunteer & Internship</h2>
+				<strong>Welcome to Our Volunteer and Internship Hub</strong>
+                <p>At our organization, we believe in the power of passionate individuals and emerging talents to 
+					drive positive change. Our Volunteer and Internship programs are designed to provide enriching 
+					experiences for those eager to make a meaningful impact and contribute to our mission. Explore 
+					the opportunities below and join us in our journey towards creating a better world.</p>
+            </div>
+        </section>
+
+        <!-- 📌 Career -->
+        <section id="career" class="involve-section">
+            <div class="content">
+                <h2>Career (Coming Soon)</h2>
+                <p>We are growing and will soon have opportunities for full-time careers with us. Stay tuned for updates!</p>
+            </div>
+        </section>
+
     </div>
-</section>
+
+</body>
+</html>
